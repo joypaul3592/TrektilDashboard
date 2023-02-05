@@ -130,7 +130,7 @@ const DashboardNav = ({ close, setClose }) => {
     return (
         <div className=' h-full '>
             {/* <!-- Component Start --> */}
-            <div class={`flex flex-col  items-center justify-between h-full overflow-x-hidden scrollbar overflow-y-auto transition-all duration-300  ease-in-out  bg-[#3A302F] text-white shadow-[0_0_15px_0_rgba(0,0,0,0.11)] rounded ${close ? 'w-16 duration-500' : 'w-80 '}`}>
+            <div class={`flex flex-col  items-center justify-between h-full overflow-x-hidden scrollbar overflow-y-auto transition-all duration-300  ease-in-out bg-[#3A302F] text-white shadow-[0_0_15px_0_rgba(0,0,0,0.11)] rounded-lg ${close ? 'w-16 duration-500' : 'w-80 '}`}>
                 <div className=' w-full flex flex-col justify-between '>
                     <NavLink to='/' className={`w-full  ${close ? 'px-0' : 'px-4'}`}>
                         <div class={` w-full items-center mt-3 h-12  ${close ? '  flex  items-center w-full ml-3' : 'flex flex-row '}`}>
