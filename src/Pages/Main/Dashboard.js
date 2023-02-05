@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import DashboardNav from '../../layout/DashboardNav/DashboardNav';
-import DashboardPage from '../../layout/DashboardPage/DashboardPage';
+import DashHome from '../MenuPage/DashHome/DashHome';
+import DashReviews from '../MenuPage/DashReviews/DashReviews';
 
 
 const Dashboard = () => {
-
-    // Dark Mood
-    const [dark, setDark] = useState(
-        JSON.parse(localStorage.getItem('dark'))
-    );
-    useEffect(() => {
-        localStorage.setItem('dark', JSON.stringify(dark));
-        setDark(dark);
-    }, [dark]);
 
     // Side Navbar
     const [close, setClose] = useState(JSON.parse(localStorage.getItem('close')));
@@ -21,16 +14,19 @@ const Dashboard = () => {
         setClose(close);
     }, [close]);
 
-    console.log(close);
 
     return (
-        <div className=' flex container mx-auto relative'>
-            <div className=' h-screen absolute top-0  left-0 z-[9999]'>
+        <div className=' flex w-full  mx-auto relative '>
+            <div className='  fixed bottom-0 top-0 left-[5%7] z-[9999] '>
                 <DashboardNav setClose={setClose} close={close}></DashboardNav>
             </div>
             <div className={`b w-full transition-all duration-500  ease-in-out bg-secondary  ${close ? 'pl-20' : 'pl-80 duration-200'}`}>
                 <div className=' w-full pr-20'>
-                    <DashboardPage setDark={setDark} dark={dark}></DashboardPage>
+                    <Routes>
+                        <Route path='/' element={<DashHome></DashHome>}></Route>
+                        <Route path='/reviews' element={<DashReviews></DashReviews>}></Route>
+
+                    </Routes>
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@ import LatestBooking from '../../../Components/DashboardHome/LatestBooking';
 
 const DashHome = () => {
     return (
-        <div>
+        <div className=' mx-10 my-16'>
             <Cards />
             <div className=' flex gap-10 my-16'>
                 <div className='w-1/3'>

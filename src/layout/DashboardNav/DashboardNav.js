@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { RiAppsFill } from "react-icons/ri";
-import { AiOutlineCalendar, AiFillFileAdd, AiOutlineShoppingCart, AiOutlineMail, AiFillProject } from "react-icons/ai";
 import { BsChatDotsFill } from "react-icons/bs";
 import { BiBookAlt } from "react-icons/bi";
 import { RiContactsFill } from "react-icons/ri";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { MdKeyboardArrowDown, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { AiOutlineCalendar, AiFillFileAdd, AiOutlineShoppingCart, AiOutlineMail, AiFillProject } from "react-icons/ai";
 
 
 
@@ -30,19 +30,19 @@ const DashboardNav = ({ close, setClose }) => {
             icon: <AiOutlineCalendar />,
             Service: [
                 {
-                    ServicePath: '/',
+                    ServicePath: '/primeam',
                     ServiceRoute: 'Primeam',
                 },
                 {
-                    ServicePath: '/',
+                    ServicePath: '/golden',
                     ServiceRoute: 'Golden',
                 },
                 {
-                    ServicePath: '/',
+                    ServicePath: '/silver',
                     ServiceRoute: 'Silver',
                 },
                 {
-                    ServicePath: '/',
+                    ServicePath: '/branz',
                     ServiceRoute: 'Branz',
                 }
             ]
@@ -54,37 +54,37 @@ const DashboardNav = ({ close, setClose }) => {
             icon: <BsChatDotsFill />,
             Service: [
                 {
-                    ServicePath: '/',
+                    ServicePath: '/loyal',
                     ServiceRoute: 'Loyal',
                 },
                 {
-                    ServicePath: '/',
+                    ServicePath: '/discount',
                     ServiceRoute: 'Discount',
                 },
                 {
-                    ServicePath: '/',
+                    ServicePath: '/impulse',
                     ServiceRoute: 'Impulse ',
                 }
             ]
         },
         {
             Route: 'Boocking list',
-            Path: '/',
+            Path: '/booklist',
             height: '11rem',
             icon: <AiFillFileAdd />,
         },
         {
             Route: 'Inbox',
-            Path: '/',
+            Path: '/inbox',
             height: '11rem',
             icon: <AiOutlineShoppingCart />,
             Service: [
                 {
-                    ServicePath: '/',
+                    ServicePath: '/cchart',
                     ServiceRoute: 'Company Chat',
                 },
                 {
-                    ServicePath: '/',
+                    ServicePath: '/asd',
                     ServiceRoute: 'Customer Chat',
                 }
             ]
@@ -106,18 +106,18 @@ const DashboardNav = ({ close, setClose }) => {
             height: '11rem',
             Service: [
                 {
-                    ServicePath: '/',
+                    ServicePath: '/public',
                     ServiceRoute: 'Public',
                 },
                 {
-                    ServicePath: '/',
+                    ServicePath: '/privet',
                     ServiceRoute: 'Privet',
                 }
             ]
         },
         {
             Route: 'Customer Review',
-            Path: '/contacts',
+            Path: '/reviews',
             icon: <RiContactsFill />
         },
         {
@@ -147,16 +147,21 @@ const DashboardNav = ({ close, setClose }) => {
                     </NavLink>
 
                     {/* Menu Items */}
+                    {/* ${menu?.Service ? (DropdownEnter == index) ? 'bg-[#5a4e4c] rounded-t-2xl rounded-b-none' : null : (DropdownEnter == index) ? 'bg-[#5a4e4c]' : null}  */}
 
                     <div class="w-full px-2">
                         <div class="flex flex-col  items-center w-full mt-3 border-t border-gray-300">
                             {
                                 main_menu.map((menu, index) =>
                                     <>
-                                        <NavLink to={menu?.Path} className='w-full' >
-                                            <div class={`flex w-full items-center h-12 px-3 mt-2 rounded transition-all duration-150 ease-in hover:pl-5   ${menu?.Service ? (DropdownEnter == index) ? 'bg-[#5a4e4c] rounded-t-2xl rounded-b-none' : null : (DropdownEnter == index) ? 'bg-[#5a4e4c]' : null} `}>
+                                        <NavLink to={menu?.Path} className={({ isActive }) => (`w-full ${isActive ? 'bg-[#5a4e4c]  rounded-b-none' : null}`)}  >
+                                            <div class={(` flex w-full items-center h-12 px-3 mt-2 rounded transition-all duration-150 ease-in hover:pl-5   
+                                         
+                                            
+                                            `)}
+                                            >
                                                 <div className={` ${close ? ' py-1 ' : 'py-1'}`}>
-                                                    <div class={` text-xl p-1 bg-red-500 rounded text-white  stroke-current  ${close && 'mx-auto '} `}>
+                                                    <div class={` text-xl p-1  bg-red-500 rounded text-white  stroke-current  ${close && 'mx-auto '} `}>
                                                         {menu?.icon}
                                                     </div>
                                                 </div>
@@ -170,7 +175,7 @@ const DashboardNav = ({ close, setClose }) => {
                                                 </div>
                                             </div>
 
-                                            <div className={`overflow-hidden bg-[#5a4e4c] rounded-b-2xl transition-all duration-500 ease-in  ${(menu?.Service) ? 'block' : 'hidden'}  ${(DropdownEnter == index) ? 'h-auto py-2 pb-5' : 'h-0'}`}>
+                                            <div className={`overflow-hidden bg-[#5a4e4c]  transition-all duration-500 ease-in  ${(menu?.Service) ? 'block' : 'hidden'}  ${(DropdownEnter == index) ? 'h-auto py-2 pb-5' : 'h-0'}`}>
                                                 {menu?.Service?.map(dropmenu =>
                                                     <div>
                                                         <NavLink to={dropmenu?.ServicePath}>
