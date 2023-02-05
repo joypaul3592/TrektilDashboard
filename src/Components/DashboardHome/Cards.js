@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdArrowDropUp } from 'react-icons/md';
 
-const Carts = () => {
+const Cards = () => {
 
     const cartData = [
         {
@@ -54,4 +54,4 @@ const Carts = () => {
     );
 };
 
-export default Carts;
+export default Cards;

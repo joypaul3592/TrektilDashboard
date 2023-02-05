@@ -1,14 +1,16 @@
 import React from 'react';
+import ActiveAcount from '../../../Components/DashboardHome/ActiveAcount';
 import BookingTable from '../../../Components/DashboardHome/BookingTable';
-import Carts from '../../../Components/DashboardHome/Carts';
+import Cards from '../../../Components/DashboardHome/Cards';
 import Chart from '../../../Components/DashboardHome/Chart';
 import ConversationRate from '../../../Components/DashboardHome/ConversationRate';
+import Income from '../../../Components/DashboardHome/Income';
 import LatestBooking from '../../../Components/DashboardHome/LatestBooking';
 
 const DashHome = () => {
     return (
         <div>
-            <Carts />
+            <Cards />
             <div className=' flex gap-10 my-16'>
                 <div className='w-1/3'>
                     <LatestBooking />
@@ -20,8 +22,8 @@ const DashHome = () => {
             <BookingTable />
             <div className=' grid grid-cols-3 gap-5 my-16'>
                 <ConversationRate />
-                <ConversationRate />
-                <ConversationRate />
+                <ActiveAcount />
+                <Income />
             </div>
         </div>
     );

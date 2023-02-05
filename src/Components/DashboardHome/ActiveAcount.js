@@ -1,37 +1,38 @@
 import React from 'react';
+import { FaCheckCircle } from "react-icons/fa";
 import profileimg1 from '../../assect/image/profile1.png'
 import profileimg2 from '../../assect/image/profile2.png'
 import profileimg3 from '../../assect/image/profile3.png'
 import profileimg4 from '../../assect/image/profile4.png'
-const ConversationRate = () => {
+const ActiveAcount = () => {
     const bookingData = [
         {
             id: 1,
             name: "Calvin Crip",
             bookingDate: "27 Nov, 2022",
             img: profileimg1,
-            rate: 98
+            checked: true
         },
         {
             id: 2,
             name: "Calvin Crip",
             bookingDate: "24 Nov, 2022",
             img: profileimg2,
-            rate: 95
+            checked: false
         },
         {
             id: 3,
             name: "Calvin Crip",
             bookingDate: "17 Nov, 2022",
             img: profileimg3,
-            rate: 94
+            checked: false
         },
         {
             id: 4,
             name: "Calvin Crip",
             bookingDate: "14 Nov, 2022",
             img: profileimg4,
-            rate: 92
+            checked: true
         },
     ]
 
@@ -39,8 +40,8 @@ const ConversationRate = () => {
         <div className=' w-full bg-white  text-black rounded border border-gray-300'>
             <div className=' py-6 px-5 border-b border-b-gray-300'>
                 <div className=' gap-4 '>
-                    <h1 className=' font-medium text-xl'>Top company conversion rate</h1>
-                    <p className=' text-sm text-gray-600'>Based on the performace</p>
+                    <h1 className=' font-medium text-xl'>Activity Account</h1>
+                    <p className=' text-sm text-gray-600'>Active their account</p>
                 </div>
             </div>
             <div >
@@ -53,8 +54,8 @@ const ConversationRate = () => {
                                 <p className=' text-sm text-gray-600'> {data.bookingDate}</p>
                             </div>
                         </div>
-                        <div className='text-green-600 '>
-                            {data.rate}%
+                        <div className=''>
+                            <FaCheckCircle className={`${data.checked == true ? 'text-green-500' : 'text-black'}`} />
                         </div>
                     </div>)
                 }
@@ -66,4 +67,4 @@ const ConversationRate = () => {
     );
 };
 
-export default ConversationRate;
+export default ActiveAcount;
