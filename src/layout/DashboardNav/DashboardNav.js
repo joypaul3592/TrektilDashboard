@@ -147,15 +147,14 @@ const DashboardNav = ({ close, setClose }) => {
                     </NavLink>
 
                     {/* Menu Items */}
-                    {/* ${menu?.Service ? (DropdownEnter == index) ? 'bg-[#5a4e4c] rounded-t-2xl rounded-b-none' : null : (DropdownEnter == index) ? 'bg-[#5a4e4c]' : null}  */}
 
                     <div class="w-full px-2">
                         <div class="flex flex-col  items-center w-full mt-3 border-t border-gray-300">
                             {
                                 main_menu.map((menu, index) =>
                                     <>
-                                        <NavLink to={menu?.Path} className={({ isActive }) => (`w-full ${isActive ? 'bg-[#5a4e4c]  rounded-b-none' : null}`)}  >
-                                            <div class={(` flex w-full items-center h-12 px-3 mt-2 rounded transition-all duration-150 ease-in hover:pl-5   
+                                        <NavLink to={menu?.Path} className={({ isActive }) => (`w-full mt-3 hover:bg-[#5a4e4c]  ${isActive ? 'bg-[#5a4e4c]  rounded-b-none' : null}`)}  >
+                                            <div class={(` flex w-full items-center h-12 px-3  rounded transition-all duration-150 ease-in hover:pl-5   
                                          
                                             
                                             `)}

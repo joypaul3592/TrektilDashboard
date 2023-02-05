@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import DashboardNav from '../../layout/DashboardNav/DashboardNav';
+import CommingSoon from '../MenuPage/CommingSoon/CommingSoon';
 import DashHome from '../MenuPage/DashHome/DashHome';
 import DashReviews from '../MenuPage/DashReviews/DashReviews';
 
 
 const Dashboard = () => {
 
+    const location = useLocation();
+    const pathName = location.pathname;
+    console.log(pathName)
     // Side Navbar
     const [close, setClose] = useState(JSON.parse(localStorage.getItem('close')));
     useEffect(() => {
@@ -25,7 +29,7 @@ const Dashboard = () => {
                     <Routes>
                         <Route path='/' element={<DashHome></DashHome>}></Route>
                         <Route path='/reviews' element={<DashReviews></DashReviews>}></Route>
-
+                        <Route path='*' element={<CommingSoon />}></Route>
                     </Routes>
                 </div>
             </div>
