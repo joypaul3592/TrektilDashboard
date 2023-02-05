@@ -114,15 +114,15 @@ const BookingTable = () => {
             </div>
             <table className='w-full text-'>
                 <thead className=' text-left '>
-                    <tr className=' border border-gray-600 shadow-md'>
+                    <tr className=' border border-gray-600 shadow-md shadow-gray-300'>
                         {
                             bookingData.heading.map(hedaData => <th key={hedaData.id} className=' border border-gray-600 px-10 py-4 font-medium'>{hedaData.name}</th>)
                         }
                     </tr>
                 </thead>
-                <tbody className=''>
+                <tbody >
                     {
-                        bookingData.tableData.map(data => <tr key={data.id} className=' border border-gray-600  shadow-md'>
+                        bookingData.tableData.map(data => <tr key={data.id} className=' border border-gray-600  shadow-md shadow-gray-300'>
                             <td className=' broder border-gray-600 px-10 py-4'>{data.no}</td>
                             <td className=' border border-gray-600 px-10 py-4'>{data.name}</td>
                             <td className=' border border-gray-600 px-10 py-4'>{data.id}</td>
@@ -133,7 +133,7 @@ const BookingTable = () => {
                     }
                 </tbody>
             </table>
-            <div className=' py-5 rounded-b-lg border border-t-[0px] border-gray-600'></div>
+            <div className='shadow shadow-gray-300 py-5 rounded-b-lg border border-t-[0px] border-gray-600'></div>
         </div>
     );
 };

@@ -35,43 +35,18 @@ ChartJS.register(
 const Chart = () => {
 
 
-    // const data = () => {
-    //     return {
-    //         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-    //         datasets: [
-    //             {
-    //                 label: "First dataset",
-    //                 data: [33, 53, 85, 41, 44, 65],
-    //                 fill: "start",
-    //                 backgroundColor: (context) => {
-    //                     const ctx = context.chart.ctx;
-    //                     const gradient = ctx.createLinearGradient(0, 0, 0, 200);
-    //                     gradient.addColorStop(0, "rgba(250,174,50,1)");
-    //                     gradient.addColorStop(1, "rgba(250,174,50,0)");
-    //                     return gradient;
-    //                 },
-    //                 borderColor: "rgba(75,192,192,1)"
-    //             },
-    //             {
-    //                 label: "Second dataset",
-    //                 data: [33, 25, 35, 51, 54, 76],
-    //                 fill: "start",
-    //                 borderColor: "#742774"
-    //             }
-    //         ]
-    //     };
-    // };
+
 
 
     const data = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Auc", "Nov", "Dec"],
         datasets: [
             {
                 label: "First dataset",
-                data: [33, 53, 85, 41, 44, 65],
+                data: [33, 53, 85, 41, 44, 65, 12, 86, 48, 63, 37, 65],
                 fill: "start",
-                backgroundColor: "rgba(75,192,192,0.2)",
-                borderColor: "rgba(75,192,192,1)"
+                backgroundColor: "rgba(77, 53, 189, 0.8)",
+                borderColor: "rgba(75,192,192,0)"
             }
         ]
     };
@@ -81,6 +56,11 @@ const Chart = () => {
     const options = {
         maintainAspectRatio: false,
         responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
         scales: {
             x: {
                 grid: {
@@ -96,57 +76,19 @@ const Chart = () => {
     };
 
 
-    const data2 = {
-        labels: [
-            'Boston',
-            'Worcester',
-            'Springfield',
-            'Lowell',
-            'Cambridge',
-            'New Bedford'
-        ],
-        datasets: [
-            {
-                data: [617594, 181045, 153060, 106519, 105162, 95072],
-                //backgroundColor:'green',
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(54, 162, 235, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(153, 102, 255, 0.6)',
-                    'rgba(255, 159, 64, 0.6)',
-                    'rgba(255, 99, 132, 0.6)'
-                ]
-            }
-        ]
-    }
-
     return (
-        <div className=' h-96 w-full '>
-
-            <Line data={data} options={options} width={100}
-                height={50} />
-
-            {/* <Line
-                data={data}
-                options={{
-                    title: {
-                        display: 'joy',
-                        text: 'Largest Cities in Massachusetts',
-                        fontSize: 25
-                    },
-                    legend: {
-                        display: 'joy',
-                        position: 'right',
-                        labels: {
-                            fontColor: '#000',
-                            backgroundColor: 'red'
-                        }
-                    }
-                }}
-            /> */}
-
+        <div className=' h-full w-full  relative border border-gray-300 p-5'>
+            <div className=' flex items-center justify-between mb-6 '>
+                <h1>Overview the booking with our site</h1>
+                <div className=' flex items-center rounde text-sm'>
+                    <button className='w-1/2 py-0.5 text-white bg-red-400 px-4 rounded-l'>Month</button>
+                    <button className='w-1/2 py-0.5  bg-red-200 px-4 rounded-r'>Year</button>
+                </div>
+            </div>
+            <div className=' h-[22rem]'>
+                <Line data={data} options={options} width={100}
+                    height={50} />
+            </div>
 
 
         </div>
